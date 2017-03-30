@@ -201,10 +201,10 @@
                                 </div>
                                 <div class="button" ng-if="IsTrackingInventory==false||AllowPurchaseWhenSoldOut==true || (IsTrackingInventory&&AllowPurchaseWhenSoldOut==false&&Quantity>0)">
                                     <a href="<?php echo base_url('cart/add/'.$product->id) ?>" ng-click="addToCard()" class="btn btn-primary"><i class="glyphicon glyphicon-shopping-cart"></i>Thêm giỏ hàng</a>
-<!--                                    <a href="--><?php //echo base_url('order/check_out') ?><!--"class="btn btn-default"><i class="glyphicon glyphicon-ok"></i>Mua ngay</a>-->
+                              
                                 </div>
                                 <div class="button" ng-if="IsTrackingInventory==true&&AllowPurchaseWhenSoldOut==false&&Quantity<=0">
-<!--                                    <button class="btn btn-primary" disabled="disabled"><i class="glyphicon glyphicon-shopping-cart"></i>Hết hàng</button>-->
+                      
                                 </div>
                             </div>
                         </div>

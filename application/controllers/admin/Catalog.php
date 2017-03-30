@@ -15,6 +15,8 @@ class Catalog extends MY_Controller
 
     function index()
     {
+
+        
         $list = $this->CatalogModel->get_list();
         // lấy ra tổng số sản phẩm
         $total = $this->CatalogModel->get_total();
@@ -23,6 +25,8 @@ class Catalog extends MY_Controller
         // lấy ra nội dung của biến message
         $message = $this->session->flashdata('message');
         $this->data['message'] = $message;
+
+
 
         // load ra view
         $this->data['temp'] = 'backend/catalog/index';
@@ -45,17 +49,21 @@ class Catalog extends MY_Controller
             if($this->form_validation->run())
             {
 
-                $name = $this->input->post('name');
-                $icon = $this->input->post('icon');
-                $sort_order = $this->input->post('sort_order');
-                $parent_id = $this->input->post('parent_id');
-                $active = $this->input->post('rdoStatus');
-                $data= array(
-                    'name'=> $name,
-                    'sort_order'=>intval($sort_order),
-                    'parent_id'=>$parent_id,
-                    'icon' => $icon,
-                    'activel' =>$active,
+                $name           = $this->input->post('name');
+                $site_title     = safe_title($name);
+                $icon           = $this->input->post('icon');
+                $sort_order     = $this->input->post('sort_order');
+                $parent_id      = $this->input->post('parent_id');
+                $active         = $this->input->post('rdoStatus');
+
+                $data = array(
+                    'name'          => $name,
+                    'sort_order'    =>intval($sort_order),
+                    'site_title'    =>$site_title,
+                    'parent_id'     =>$parent_id,
+                    'icon'          => $icon,
+                    'activel'       =>$active,
+                    'created'       =>NOW(),
 
                 );
                 if($this->CatalogModel->create($data))

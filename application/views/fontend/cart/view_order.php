@@ -81,7 +81,7 @@
                         </div>
                         <div class="clearfix col-md-12">
                             <div class="button text-right">
-                                <a class="btn btn-default" href="/">Tiếp tục mua hàng</a>
+                                <a class="btn btn-default" href=" <?php echo base_url(); ?>">Tiếp tục mua hàng</a>
                             </div>
                         </div>
                     </div>

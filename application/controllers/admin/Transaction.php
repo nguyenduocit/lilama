@@ -60,6 +60,29 @@ class Transaction extends MY_Controller
         $this->load->view('backend/main', $this->data);
     }
 
+    // update tình trạng giao dịch 
+
+    function update_status()
+    {
+        if(isset($_POST['status']) && isset($_POST['id']))
+        {
+            $id = $_POST['id'];
+            $status = $_POST['status'];
+            settype($id,"int");
+            settype($status,"int");
+
+            $data = array(
+                    'status' => $status
+                );
+
+            if($this->TransactionModel->update($id,$data))
+                {
+
+                }
+        }
+
+    }
+
     /*
      * xem chi tiết hóa đơn :
      */

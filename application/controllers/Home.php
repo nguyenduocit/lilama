@@ -72,12 +72,7 @@ class Home extends MY_Controller
             }
 
         }
-        $this->load->model('IntroModel');
-        //lấy ra thông tin bảng giới thiệu
-        $list_info = $this->IntroModel->get_list();
-        $this->data['list_info'] = $list_info;
-
-        $this->session->set_flashdata('list_info', $list_info );
+    
         $this->data['catalog_lists'] = $catalog_lists;
 
         $this->data['slide'] = $slide_list;

@@ -40,13 +40,6 @@ class News extends MY_Controller
         $new_list = $this->NewModel->get_list($input);
         $this->data['news'] = $new_list;
 
-        $this->load->model('IntroModel');
-        //lấy ra thông tin bảng giới thiệu
-        $list_info = $this->IntroModel->get_list();
-        $this->data['list_info'] = $list_info;
-
-        $this->session->set_flashdata('list_info', $list_info );
-
         $this->data['temp']= "fontend/news/index";
         $this ->load ->view('fontend/details',$this->data);
     }

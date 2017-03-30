@@ -55,6 +55,7 @@
 
 <script type="text/javascript" src="<?php echo public_url() ?>/js/custom_admin.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo public_url() ?>/js/myscript.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php echo public_url() ?>/js/ajax.js" type="text/javascript"></script>
 
 <script type="text/javascript">
     var baseURL = "http://localhost/www/CodeIgniter";

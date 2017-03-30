@@ -50,6 +50,13 @@ class MY_Controller extends CI_Controller
                     $this->data['user_info'] = $user_info;
                 }
 
+                $this->load->model('IntroModel');
+                //lấy ra thông tin bảng giới thiệu
+                $list_info = $this->IntroModel->get_list();
+                $this->data['list_info'] = $list_info;
+
+                $this->session->set_flashdata('list_info', $list_info );
+
                 // goi toi thuw vien
                 $this->load->library('cart');
                 $this->data['total_item'] = $this->cart->total_items();

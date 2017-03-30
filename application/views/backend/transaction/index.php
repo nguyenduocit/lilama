@@ -13,7 +13,7 @@
         <table width="100%" cellspacing="0" cellpadding="0" id="checkAll" class="sTable mTable myTable">
             <thead class="filter">
                 <tr>
-                    <td colspan="6">
+                    <td colspan="10">
                         <form method="get" action="" class="list_filter form">
                             <table width="80%" cellspacing="0" cellpadding="0">
                                 <tbody>
@@ -44,7 +44,7 @@
             </thead>
             <tfoot class="auto_check_pages">
                 <tr>
-                    <td colspan="6">
+                    <td colspan="10">
                         <div class="list_action itemActions">
                             <a url="<?php admin_url('transaction/deleteAll') ?>" class="button blueB" id="submit" href="#submit">
                             <span style="color:white;">Xóa hết</span>
@@ -71,7 +71,7 @@
                     <td class="textC"> <?php
                         if ( $item->status ==0)
                         {
-                            echo " Chưa thanh toán ";
+                            echo " <a title='' href='' class='status' status ='1' id ='".$item ->id."'  ><img src='".public_url('admin')."/images/icons/color/delete.png'> </a> ";
                         }
                         elseif( $item->status ==1)
                         {

@@ -71,7 +71,7 @@
                             <span>Sản phẩm/trang</span>
                             <select id="lblimit" name="lblimit" class="nb_item"  onchange="window.location.href = this.options[this.selectedIndex].value">
                                 <?php for ($i = 4; $i <= 12 ;  $i = $i+4 ): ?>
-                                <option <?php echo $numbers==$i? 'selected':'' ?> value="?limits=<?php echo $i ?>&cta=<?php echo $catalog->id ?>"><?php echo $i ?></option>
+                                <option <?php echo $numbers==$i? 'selected':'' ?> class=" " value="?limits=<?php echo $i ?>&cta=<?php echo $catalog->id ?>"><?php echo $i ?></option>
                                 <?php endfor; ?>
                             </select>
                         </div>

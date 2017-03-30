@@ -63,12 +63,6 @@
                 }
 
             }
-            $this->load->model('IntroModel');
-            //lấy ra thông tin bảng giới thiệu
-            $list_info = $this->IntroModel->get_list();
-            $this->data['list_info'] = $list_info;
-
-            $this->session->set_flashdata('list_info', $list_info );
             
             $this->data['catalog_lists'] = $catalog_lists;
 
@@ -150,13 +144,6 @@
             $list = $this->ProductModel->get_list($input);
             $this->data['list'] = $list;
 
-            $this->load->model('IntroModel');
-            //lấy ra thông tin bảng giới thiệu
-            $list_info = $this->IntroModel->get_list();
-            $this->data['list_info'] = $list_info;
-
-            $this->session->set_flashdata('list_info', $list_info );
-
             // hiển thị ra phần view trang catalog
             $this->data['temp'] = 'fontend/product/catalog';
             $this ->load ->view('fontend/details',$this->data);
@@ -197,12 +184,6 @@
             $product_hot = $this->ProductModel->get_list($input);
             $this->data['product_hot'] = $product_hot;
 
-            $this->load->model('IntroModel');
-            //lấy ra thông tin bảng giới thiệu
-            $list_info = $this->IntroModel->get_list();
-            $this->data['list_info'] = $list_info;
-
-            $this->session->set_flashdata('list_info', $list_info );
             // hiển thị ra phần view
             $this->data['temp'] = 'fontend/product/view';
             $this ->load ->view('fontend/details',$this->data);
@@ -242,13 +223,6 @@
                 // du lieu tra ve
                 die(json_encode($result));
             }
-
-            $this->load->model('IntroModel');
-            //lấy ra thông tin bảng giới thiệu
-            $list_info = $this->IntroModel->get_list();
-            $this->data['list_info'] = $list_info;
-
-            $this->session->set_flashdata('list_info', $list_info );
             
             // hiển thị ra phần view
             $this->data['temp'] = 'fontend/product/search';
@@ -262,12 +236,6 @@
 
         function search_price()
         {
-            $this->load->model('IntroModel');
-            //lấy ra thông tin bảng giới thiệu
-            $list_info = $this->IntroModel->get_list();
-            $this->data['list_info'] = $list_info;
-
-            $this->session->set_flashdata('list_info', $list_info );
                 
             $price_from = intval($this->input->get('price_from'));
             $price_to = intval($this->input->get('price_to'));
